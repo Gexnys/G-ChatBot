@@ -8,4 +8,4 @@ Your support will be useful.
 ►
 
 Contact me via e-mail so that I can see your suggestions or desired codes immediately. 
--->    developergokhan@proton.me 
+--->     ► developergokhan@proton.me 
