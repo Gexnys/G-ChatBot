@@ -7,4 +7,4 @@ It will continue to be developed. Source codes will be reproduced.
 Your support will be useful.
 ►
 
-Contact me via e-mail so that I can see your suggestions or desired codes immediately.  --> " developergokhan@proton.me "
+Contact me via e-mail so that I can see your suggestions or desired codes immediately.  -->   " developergokhan@proton.me "
