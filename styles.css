@@ -1,0 +1,195 @@
+/* Genel yapı ve font ayarları */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; 
+    color: #5a5858;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Başlık */
+#header {
+    width: 32%;
+    padding: 10px;
+    text-align: center;
+    background-color: #121212; 
+    color: #FFA500; 
+    font-size: 35px;
+    font-weight: bold;
+    border-bottom: 1px solid #333; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: slideInDown 0.5s ease-in-out; 
+}
+
+/* Başlık animasyonu */
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Sohbet kutusu */
+#chatbox {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animasyon */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Sohbet balonları */
+.message {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    font-size: 16px;
+    word-wrap: break-word;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* Kullanıcı mesajı */
+.user-message {
+    background-color: #FFD700; 
+    align-self: flex-end;
+    color: #000;
+    animation: slideInRight 0.5s ease-in-out;
+}
+
+/* Bot mesajı */
+.bot-message {
+    background-color: #FFA500; 
+    align-self: flex-start;
+    color: #fff;
+    animation: slideInLeft 0.5s ease-in-out;
+}
+
+/* Kullanıcı mesajı animasyonu */
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Bot mesajı animasyonu */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Kullanıcı girişi alanı ve butonlar */
+#userInput {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+
+#sendButton, #voiceButton {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#sendButton:hover, #voiceButton:hover {
+    background-color: #555;
+}
+
+/* Karanlık tema butonları */
+#sendButton, #voiceButton {
+    background-color: #333;
+}
+
+#sendButton:hover, #voiceButton:hover {
+    background-color: #444;
+}
+
+/* Sayfa yüklendiğinde animasyon */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Chat container */
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Buton konumlandırması */
+button {
+    margin-top: 10px;
+    background-color: #FFD700;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e6b800;
+}
+
+        /* Bu Program " Gexnys " tarafından yazılmıştır. */
+            /* Açık kaynak kodludur. */
+                 /* İletişim için " developergokhan@proton.me " adresine mail gönderebilirsiniz. */
