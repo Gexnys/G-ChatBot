@@ -2,7 +2,7 @@ import re
 import random
 import time
 
-# Kullanıcı bilgileri ve sohbet geçmişi
+
 user_data = {
     "name": None,
     "mood": None,
@@ -12,7 +12,7 @@ user_data = {
 
 chat_history = []
 
-# Yanıtlar ve konular
+
 intents = {
     "greeting": {
         "patterns": ["merhaba", "selam", "günaydın", "nasılsın?", "iyi misin?", "ne haber?"],
@@ -65,12 +65,12 @@ intents = {
     }
 }
 
-# Mesajı temizleme ve küçük harfe çevirme
+
 def clean_input(user_input):
-    user_input = re.sub(r'[^\w\s]', '', user_input)  # Noktalama işaretlerini temizle
+    user_input = re.sub(r'[^\w\s]', '', user_input)  
     return user_input.lower()
 
-# Kullanıcı bilgilerini güncelleme
+
 def update_user_data(user_input):
     if 'name' not in user_data:
         if "adın ne" in user_input.lower() or "ismin ne" in user_input.lower():
@@ -80,11 +80,11 @@ def update_user_data(user_input):
         return None
     return None
 
-# Sohbet geçmişini tutma
+
 def add_to_chat_history(user_input, bot_response):
     chat_history.append({"user": user_input, "bot": bot_response})
 
-# Kullanıcının ruh halini öğrenme
+
 def get_mood_response(user_input):
     for mood, data in intents["mood"]["responses"].items():
         if mood in user_input:
@@ -92,7 +92,7 @@ def get_mood_response(user_input):
             return random.choice(data)
     return None
 
-# Kullanıcı ilgi alanlarını öğrenme
+
 def get_interests_response(user_input):
     if "hobilerin neler" in user_input or "nelerden hoşlanırsın" in user_input:
         interests = ", ".join(user_data["interests"]) if user_data["interests"] else "Henüz paylaşmadın."
@@ -100,30 +100,30 @@ def get_interests_response(user_input):
 
     return None
 
-# Eş anlamlı kelimelerle eşleştirme
-def match_intent(user_input):
-    user_input = clean_input(user_input)  # Mesajı temizle
 
-    # Kullanıcı bilgilerini güncelle
+def match_intent(user_input):
+    user_input = clean_input(user_input)  
+
+    
     response = update_user_data(user_input)
     if response:
         return response
     
-    # Ruh haline göre yanıt ver
+    
     mood_response = get_mood_response(user_input)
     if mood_response:
         return mood_response
 
-    # İlgi alanlarıyla ilgili yanıt ver
+    
     interests_response = get_interests_response(user_input)
     if interests_response:
         return interests_response
 
-    # Öğrenme komutlarına tepki ver
+   
     if "öğren" in user_input or "hatırlama" in user_input:
         return "Tabii, bu konuyu not ediyorum ve gelecekte hatırlayacağım."
 
-    # Kullanıcının mesajına uygun yanıtı bul
+  
     for intent, data in intents.items():
         if intent == "mood" or intent == "weather" or intent == "help":
             continue  
@@ -133,7 +133,7 @@ def match_intent(user_input):
     
     return random.choice(intents["no_answer"]["responses"])
 
-# Sohbet başlatma
+
 print("G-Chatbot: Merhaba! Yardımcı olabilir miyim? (Çıkmak için 'exit' yazın.)")
 
 while True:
@@ -143,20 +143,18 @@ while True:
         print("G-Chatbot: Hoşça kal!")
         break
 
-    # Yanıt üretme
+   
     response = match_intent(user_input)
     
-    # Sohbet geçmişine ekle
+   
     add_to_chat_history(user_input, response)
 
-    # Yanıtı kullanıcıya göster
+   
     print(f"G-Chatbot: {response}")
     
-                                         # Gizlenmesi gerek! "Sohbet geçmişi"
-                                             #print("Sohbet Geçmişi:", chat_history)
-    
-    
+
     # Bu Program " Gexnys " tarafından yazılmıştır.
     # Açık kaynak kodludur.
     # İletişim için " developergokhan@proton.me " adresine mail gönderebilirsiniz.
+
     # ...
